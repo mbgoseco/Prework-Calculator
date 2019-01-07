@@ -35,7 +35,8 @@ namespace calculator.cs
 
             void GetX() {
                 Console.Write("Enter a number: ");
-                x = Convert.ToDecimal(Console.ReadLine());
+                string input = Console.ReadLine();
+                x = Convert.ToDecimal(input);
             }
             while (flag == false)
             {
@@ -58,7 +59,8 @@ namespace calculator.cs
             void GetY()
             {
                 Console.Write("Enter another number to complete the operation: ");
-                y = Convert.ToDecimal(Console.ReadLine());
+                string input = Console.ReadLine();
+                y = Convert.ToDecimal(input);
             }
             while (flag == false)
             {
