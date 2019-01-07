@@ -30,7 +30,7 @@ namespace calculator.cs
 
         static void Main(string[] args)
         {
-            Console.Write("Enter an number: ");
+            Console.Write("Enter a number: ");
             decimal x = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Enter an operation( + , - , * , or / ): ");
             string op = Console.ReadLine();
@@ -44,6 +44,18 @@ namespace calculator.cs
                 {
                     case "+":
                         Console.WriteLine($"{x} + {y} = {Add(x, y)}");
+                        opflag = true;
+                        break;
+                    case "-":
+                        Console.WriteLine($"{x} - {y} = {Subtract(x, y)}");
+                        opflag = true;
+                        break;
+                    case "*":
+                        Console.WriteLine($"{x} * {y} = {Multiply(x, y)}");
+                        opflag = true;
+                        break;
+                    case "/":
+                        Console.WriteLine($"{x} / {y} = {Divide(x, y)}");
                         opflag = true;
                         break;
                     default:
