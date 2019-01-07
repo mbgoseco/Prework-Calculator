@@ -30,20 +30,27 @@ namespace calculator.cs
 
         static void Main(string[] args)
         {
-            decimal x, y;
+            decimal x = 0, y = 0;
+            bool flag = false;
 
             void GetX() {
                 Console.Write("Enter a number: ");
                 x = Convert.ToDecimal(Console.ReadLine());
             }
-            try
+            while (flag == false)
             {
-                GetX();
-            } catch (Exception e)
-            {
-                Console.WriteLine($"Error: Input was not a valid number.");
-                GetX();
+                try
+                {
+                    flag = true;
+                    GetX();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error: Input was not a valid number.");
+                    flag = false;
+                }
             }
+            flag = false;
 
             Console.Write("Enter an operation( + , - , * , or / ): ");
             string op = Console.ReadLine();
@@ -53,14 +60,18 @@ namespace calculator.cs
                 Console.Write("Enter another number to complete the operation: ");
                 y = Convert.ToDecimal(Console.ReadLine());
             }
-            try
+            while (flag == false)
             {
-                GetY();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error: Input was not a valid number.");
-                GetY();
+                try
+                {
+                    flag = true;
+                    GetY();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error: Input was not a valid number.");
+                    flag = false;
+                }
             }
 
             bool opflag; 
