@@ -30,12 +30,38 @@ namespace calculator.cs
 
         static void Main(string[] args)
         {
-            Console.Write("Enter a number: ");
-            decimal x = Convert.ToDecimal(Console.ReadLine());
+            decimal x, y;
+
+            void GetX() {
+                Console.Write("Enter a number: ");
+                x = Convert.ToDecimal(Console.ReadLine());
+            }
+            try
+            {
+                GetX();
+            } catch (Exception e)
+            {
+                Console.WriteLine($"Error: Input was not a valid number.");
+                GetX();
+            }
+
             Console.Write("Enter an operation( + , - , * , or / ): ");
             string op = Console.ReadLine();
-            Console.Write("Enter another number to complete the operation: ");
-            decimal y = Convert.ToDecimal(Console.ReadLine());
+
+            void GetY()
+            {
+                Console.Write("Enter another number to complete the operation: ");
+                y = Convert.ToDecimal(Console.ReadLine());
+            }
+            try
+            {
+                GetY();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: Input was not a valid number.");
+                GetY();
+            }
 
             bool opflag; 
             do
